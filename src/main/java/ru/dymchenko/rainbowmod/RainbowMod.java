@@ -5,14 +5,14 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import ru.dymchenko.rainbowmod.block.BlockRainbowBrick;
 import ru.dymchenko.rainbowmod.block.BlockPrismCrystal;
+import ru.dymchenko.rainbowmod.block.BlockRainbowBrick;
 import ru.dymchenko.rainbowmod.item.ItemRainbowFlint;
 import ru.dymchenko.rainbowmod.world.WorldProviderRainbow;
 
@@ -21,34 +21,32 @@ public class RainbowMod {
     public static final String MODID = "rainbowmod";
     public static final String NAME = "Rainbow Village";
     public static final String VERSION = "1.0.0";
-    public static final int RAINBOW_DIMENSION_ID = 73;
-
+    public static final int DIMENSION_ID = 73;
     public static Block RAINBOW_BRICK;
     public static Block PRISM_CRYSTAL;
     public static ItemRainbowFlint RAINBOW_FLINT;
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    @SidedProxy(clientSide = "ru.dymchenko.rainbowmod.client.ClientProxy", serverSide = "ru.dymchenko.rainbowmod.CommonProxy")
+    public static CommonProxy proxy;
+
+    @EventHandler public void preInit(FMLPreInitializationEvent event) {
         RAINBOW_BRICK = new BlockRainbowBrick();
         PRISM_CRYSTAL = new BlockPrismCrystal();
         RAINBOW_FLINT = new ItemRainbowFlint();
         GameRegistry.registerBlock(RAINBOW_BRICK, ru.dymchenko.rainbowmod.item.ItemBlockRainbowBrick.class, "rainbow_brick");
         GameRegistry.registerBlock(PRISM_CRYSTAL, "prism_crystal");
         GameRegistry.registerItem(RAINBOW_FLINT, "rainbow_flint");
-        DimensionManager.registerProviderType(RAINBOW_DIMENSION_ID, WorldProviderRainbow.class, false);
-        DimensionManager.registerDimension(RAINBOW_DIMENSION_ID, RAINBOW_DIMENSION_ID);
+        DimensionManager.registerProviderType(DIMENSION_ID, WorldProviderRainbow.class, false);
+        DimensionManager.registerDimension(DIMENSION_ID, DIMENSION_ID);
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-        int[] dyeDamage = {1, 14, 11, 2, 12, 4, 5};
-        for (int color = 0; color < dyeDamage.length; color++) {
-            GameRegistry.addShapelessRecipe(new ItemStack(RAINBOW_BRICK, 4, color),
-                    new ItemStack(Blocks.stonebrick, 4, 0), new ItemStack(Items.dye, 1, dyeDamage[color]));
+    @EventHandler public void init(FMLInitializationEvent event) {
+        int[] dyes = {1, 14, 11, 2, 12, 4, 5};
+        for (int i = 0; i < dyes.length; i++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(RAINBOW_BRICK, 4, i), new ItemStack(Blocks.stonebrick, 4), new ItemStack(Items.dye, 1, dyes[i]));
         }
-        GameRegistry.addShapelessRecipe(new ItemStack(PRISM_CRYSTAL), new ItemStack(Blocks.glass),
-                new ItemStack(Blocks.glowstone), new ItemStack(Items.dye, 1, OreDictionary.WILDCARD_VALUE));
-        GameRegistry.addShapelessRecipe(new ItemStack(RAINBOW_FLINT), new ItemStack(Items.iron_ingot),
-                new ItemStack(Items.blaze_rod), new ItemStack(Items.dye, 1, 5));
+        GameRegistry.addShapelessRecipe(new ItemStack(PRISM_CRYSTAL), new ItemStack(Blocks.glass), new ItemStack(Blocks.glowstone), new ItemStack(Items.dye, 1, 32767));
+        GameRegistry.addShapelessRecipe(new ItemStack(RAINBOW_FLINT), new ItemStack(Items.iron_ingot), new ItemStack(Items.blaze_rod), new ItemStack(Items.dye, 1, 5));
+        proxy.registerRenderers();
     }
 }

@@ -1,11 +1,1 @@
-{
-  "item.rainbow_brick.0.name": "Red Rainbow Brick",
-  "item.rainbow_brick.1.name": "Orange Rainbow Brick",
-  "item.rainbow_brick.2.name": "Yellow Rainbow Brick",
-  "item.rainbow_brick.3.name": "Green Rainbow Brick",
-  "item.rainbow_brick.4.name": "Cyan Rainbow Brick",
-  "item.rainbow_brick.5.name": "Blue Rainbow Brick",
-  "item.rainbow_brick.6.name": "Purple Rainbow Brick",
-  "tile.prism_crystal.name": "Prism Crystal",
-  "item.rainbow_flint.name": "Rainbow Flint"
-}
+{"item.rainbow_brick.0.name":"Red Rainbow Brick","item.rainbow_brick.1.name":"Orange Rainbow Brick","item.rainbow_brick.2.name":"Yellow Rainbow Brick","item.rainbow_brick.3.name":"Green Rainbow Brick","item.rainbow_brick.4.name":"Cyan Rainbow Brick","item.rainbow_brick.5.name":"Blue Rainbow Brick","item.rainbow_brick.6.name":"Purple Rainbow Brick","tile.prism_crystal.name":"Prism Crystal","item.rainbow_flint.name":"Rainbow Flint"}

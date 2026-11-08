@@ -1,11 +1,1 @@
-{
-  "item.rainbow_brick.0.name": "Красный радужный кирпич",
-  "item.rainbow_brick.1.name": "Оранжевый радужный кирпич",
-  "item.rainbow_brick.2.name": "Жёлтый радужный кирпич",
-  "item.rainbow_brick.3.name": "Зелёный радужный кирпич",
-  "item.rainbow_brick.4.name": "Голубой радужный кирпич",
-  "item.rainbow_brick.5.name": "Синий радужный кирпич",
-  "item.rainbow_brick.6.name": "Фиолетовый радужный кирпич",
-  "tile.prism_crystal.name": "Кристалл призмы",
-  "item.rainbow_flint.name": "Радужное огниво"
-}
+{"item.rainbow_brick.0.name":"Красный радужный кирпич","item.rainbow_brick.1.name":"Оранжевый радужный кирпич","item.rainbow_brick.2.name":"Жёлтый радужный кирпич","item.rainbow_brick.3.name":"Зелёный радужный кирпич","item.rainbow_brick.4.name":"Голубой радужный кирпич","item.rainbow_brick.5.name":"Синий радужный кирпич","item.rainbow_brick.6.name":"Фиолетовый радужный кирпич","tile.prism_crystal.name":"Кристалл призмы","item.rainbow_flint.name":"Радужное огниво"}
