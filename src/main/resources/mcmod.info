@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "rainbowmod",
+    "name": "Rainbow Village",
+    "description": "Rainbow bricks, a prism crystal and the Rainbow Village dimension.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Dymchenkoilya1719-hash"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

@@ -1,3 +1,11 @@
 {
- "variants":{"color=red":{"model":"rainbowmod:rainbow_brick_red"},"color=orange":{"model":"rainbowmod:rainbow_brick_orange"},"color=yellow":{"model":"rainbowmod:rainbow_brick_yellow"},"color=green":{"model":"rainbowmod:rainbow_brick_green"},"color=cyan":{"model":"rainbowmod:rainbow_brick_cyan"},"color=blue":{"model":"rainbowmod:rainbow_brick_blue"},"color=purple":{"model":"rainbowmod:rainbow_brick_purple"}}
+  "variants": {
+    "color=red": { "model": "rainbowmod:rainbow_brick_red" },
+    "color=orange": { "model": "rainbowmod:rainbow_brick_orange" },
+    "color=yellow": { "model": "rainbowmod:rainbow_brick_yellow" },
+    "color=green": { "model": "rainbowmod:rainbow_brick_green" },
+    "color=cyan": { "model": "rainbowmod:rainbow_brick_cyan" },
+    "color=blue": { "model": "rainbowmod:rainbow_brick_blue" },
+    "color=purple": { "model": "rainbowmod:rainbow_brick_purple" }
+  }
 }
